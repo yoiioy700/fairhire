@@ -6,7 +6,7 @@ import WalletContextProvider from '@/components/wallet/WalletContextProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'FairHire - Reputation-Gated Freelance Marketplace',
+  title: 'FairGig - Reputation-Gated Freelance Marketplace',
   description: 'Freelance marketplace gated by FairScale reputation score',
 };
 

@@ -48,7 +48,7 @@ export default function Home() {
                 F
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">FairHire</h1>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">FairGig</h1>
                 <p className="text-xs text-gray-500 dark:text-gray-400">Reputation-Gated Freelance Marketplace</p>
               </div>
             </div>
@@ -64,13 +64,79 @@ export default function Home() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {!connected ? (
-          <div className="card text-center py-12">
-            <h2 className="text-2xl font-bold mb-4">Welcome to FairHire</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Connect your Solana wallet to browse jobs gated by FairScale reputation score
-            </p>
-            <WalletButton />
-          </div>
+          <>
+            {/* Hero Section */}
+            <div className="card text-center py-12 mb-8">
+              <h2 className="text-3xl font-bold mb-4">Welcome to FairGig</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+                The first freelance marketplace gated by FairScale reputation score. 
+                Higher score = access to premium jobs.
+              </p>
+              <div className="flex justify-center gap-4">
+                <WalletButton />
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="card text-center py-6">
+                <div className="text-4xl mb-3">🔒</div>
+                <h3 className="font-bold mb-2">Reputation Gated</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Jobs locked by FairScale score</p>
+              </div>
+              <div className="card text-center py-6">
+                <div className="text-4xl mb-3">⚡</div>
+                <h3 className="font-bold mb-2">Instant Payment</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Direct USDC on Solana</p>
+              </div>
+              <div className="card text-center py-6">
+                <div className="text-4xl mb-3">🛡️</div>
+                <h3 className="font-bold mb-2">Verified Talent</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">On-chain reputation</p>
+              </div>
+            </div>
+
+            {/* Sample Jobs Preview */}
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold mb-2">Sample Jobs</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Connect wallet to apply • Higher FairScale score unlocks more jobs
+              </p>
+            </div>
+
+            <JobList
+              jobs={jobs.slice(0, 3)}
+              userScore={0}
+              onJobClick={setSelectedJob}
+              loading={jobsLoading}
+            />
+
+            {selectedJob && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+                <div className="bg-white dark:bg-gray-800 rounded-xl max-w-lg w-full p-6">
+                  <h3 className="text-xl font-bold mb-2">{selectedJob.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">{selectedJob.description}</p>
+                  <div className="flex gap-4 text-sm mb-4">
+                    <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                      Min Score: {selectedJob.minReputation}
+                    </span>
+                    <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full">
+                      ${selectedJob.budget}
+                    </span>
+                  </div>
+                  <div className="flex gap-3">
+                    <WalletButton />
+                    <button
+                      onClick={() => setSelectedJob(null)}
+                      className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
         ) : (
           <>
             <div className="mb-8 flex justify-between items-center">

@@ -1,9 +1,9 @@
-# FairHire - Reputation-Gated Freelance Marketplace
+# FairGig - Reputation-Gated Freelance Marketplace
 
 Built for FairScale Fairathon - $5,000 USDC Bounty
 
 ## 🌐 Live Demo
-[https://fairhire.vercel.app](https://fairhire.vercel.app)
+[https://fairgig.vercel.app](https://fairgig.vercel.app)
 
 ## 📹 Demo Video
 [YouTube Demo](https://youtube.com/your-demo-link)
