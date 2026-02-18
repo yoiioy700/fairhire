@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useFairscale } from '@/hooks/useFairscale';
 import { useJobs } from '@/hooks/useJobs';
@@ -9,13 +8,9 @@ import WalletButton from '@/components/wallet/WalletButton';
 import ReputationBadge from '@/components/ui/ReputationBadge';
 import JobList from '@/components/jobs/JobList';
 import JobDetail from '@/components/jobs/JobDetail';
+import PostJobForm from '@/components/jobs/PostJobForm';
 import ApplyModal from '@/components/jobs/ApplyModal';
 import { Job } from '@/lib/types';
-
-// Dynamic import untuk PostJobForm (bypass SSR)
-const PostJobForm = dynamic(() => import('@/components/jobs/PostJobForm'), {
-  ssr: false,
-});
 
 function truncateAddress(address: string) {
   if (!address) return '';
