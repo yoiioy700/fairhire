@@ -8,13 +8,34 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
+        dark: {
+          bg: '#0a0a0a',
+          card: '#111111',
+          border: '#1a1a1a',
+          muted: '#1f1f1f'
         },
+        gold: {
+          300: '#fbbf24',
+          400: '#f59e0b',
+          500: '#d97706',
+          600: '#b45309'
+        },
+        amber: {
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706'
+        }
+      },
+      fontFamily: {
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-gold': 'linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%)',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },

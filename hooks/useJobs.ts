@@ -6,8 +6,8 @@ import { Job, FairScaleScore } from '@/lib/types';
 const MOCK_JOBS: Job[] = [
   {
     id: '1',
-    title: '🚀 Build Solana dApp Frontend',
-    description: 'Need a React developer to build a Solana wallet integration for our NFT marketplace. Experience with Anchor framework preferred. Remote friendly.',
+    title: 'Build Solana dApp Frontend',
+    description: 'Need a React developer to build a Solana wallet integration for our NFT marketplace. Experience with Anchor framework preferred. Remote friendly, flexible hours.',
     budget: 5000,
     minReputation: 40,
     creator: '7xK9...3mP2',
@@ -19,9 +19,9 @@ const MOCK_JOBS: Job[] = [
   },
   {
     id: '2',
-    title: '🔒 Smart Contract Security Audit',
-    description: 'Looking for security expert to audit our new DeFi protocol. Must have prior audit experience and published reports.',
-    budget: 10000,
+    title: 'Smart Contract Security Audit',
+    description: 'Looking for security expert to audit our new DeFi protocol. Must have prior audit experience and published reports. High priority project.',
+    budget: 15000,
     minReputation: 80,
     creator: '3aB9...8kL1',
     creatorScore: { score: 90, tier: 'diamond', transactions: 200, volume: 5000, age: 730, verified: true },
@@ -32,9 +32,9 @@ const MOCK_JOBS: Job[] = [
   },
   {
     id: '3',
-    title: '🎨 Logo & Brand Identity Design',
-    description: 'Need a modern logo for our new DeFi platform. Open to creative concepts. Include brand guidelines.',
-    budget: 1500,
+    title: 'Logo & Brand Identity Design',
+    description: 'Need a modern logo for our new DeFi platform. Open to creative concepts. Include brand guidelines and social media kit.',
+    budget: 2500,
     minReputation: 20,
     creator: '9xC4...7jM2',
     creatorScore: { score: 35, tier: 'silver', transactions: 10, volume: 100, age: 180, verified: false },
@@ -45,9 +45,9 @@ const MOCK_JOBS: Job[] = [
   },
   {
     id: '4',
-    title: '📝 Technical Documentation Writer',
-    description: 'Write comprehensive docs for our SDK. API references, tutorials, and code examples needed.',
-    budget: 2000,
+    title: 'Technical Documentation Writer',
+    description: 'Write comprehensive docs for our SDK. API references, tutorials, and code examples needed. Technical background preferred.',
+    budget: 3500,
     minReputation: 30,
     creator: '2bD8...5hK9',
     creatorScore: { score: 45, tier: 'gold', transactions: 20, volume: 300, age: 240, verified: true },
@@ -58,9 +58,9 @@ const MOCK_JOBS: Job[] = [
   },
   {
     id: '5',
-    title: '📱 Mobile App Developer (React Native)',
-    description: 'Build cross-platform mobile app for our DeFi dashboard. iOS/Android with Solana mobile adapter.',
-    budget: 8000,
+    title: 'Mobile App Developer (React Native)',
+    description: 'Build cross-platform mobile app for our DeFi dashboard. iOS/Android with Solana mobile adapter. Full-time opportunity.',
+    budget: 12000,
     minReputation: 60,
     creator: '5fE1...9gL3',
     creatorScore: { score: 65, tier: 'gold', transactions: 40, volume: 800, age: 320, verified: true },
@@ -71,9 +71,9 @@ const MOCK_JOBS: Job[] = [
   },
   {
     id: '6',
-    title: '🎬 Explainer Video Production',
-    description: '2-minute animated video explaining our protocol. Professional quality with voiceover.',
-    budget: 3000,
+    title: 'Explainer Video Production',
+    description: '2-minute animated video explaining our protocol. Professional quality with voiceover. Motion graphics experience required.',
+    budget: 4500,
     minReputation: 50,
     creator: '8hG4...2kM7',
     creatorScore: { score: 55, tier: 'gold', transactions: 30, volume: 600, age: 280, verified: true },
@@ -90,7 +90,7 @@ export function useJobs() {
 
   const fetchJobs = useCallback(async () => {
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 800));
     setJobs(MOCK_JOBS);
     setLoading(false);
   }, []);
