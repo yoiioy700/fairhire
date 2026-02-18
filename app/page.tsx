@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useFairscale } from '@/hooks/useFairscale';
 import { useJobs } from '@/hooks/useJobs';
@@ -8,9 +9,13 @@ import WalletButton from '@/components/wallet/WalletButton';
 import ReputationBadge from '@/components/ui/ReputationBadge';
 import JobList from '@/components/jobs/JobList';
 import JobDetail from '@/components/jobs/JobDetail';
-import PostJobForm from '@/components/jobs/PostJobForm';
 import ApplyModal from '@/components/jobs/ApplyModal';
 import { Job } from '@/lib/types';
+
+// Dynamic import untuk PostJobForm (bypass SSR)
+const PostJobForm = dynamic(() => import('@/components/jobs/PostJobForm'), {
+  ssr: false,
+});
 
 function truncateAddress(address: string) {
   if (!address) return '';
@@ -204,7 +209,7 @@ export default function Home() {
       <footer className="border-t border-dark-border mt-20 py-8 bg-dark-bg">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-gray-500 text-sm">
-            Built for <span className="text-gold-400">FairScale Fairathon</span> • Powered by <span className="text-gold-400">Solana Devnet</span>
+            Built for <span className="text-gold-400">FairScale Fairathon</span> • Powered by <span className="text-gold-400">Solana Mainnet</span>
           </p>
         </div>
       </footer>
