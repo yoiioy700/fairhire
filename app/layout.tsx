@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import WalletContextProvider from '@/components/wallet/WalletContextProvider';
 
 export const metadata: Metadata = {
   title: 'FairGig - Reputation-Gated Freelance Marketplace',
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="bg-dark-bg text-white antialiased">
-        <WalletContextProvider>
-          {children}
-        </WalletContextProvider>
+        {children}
       </body>
     </html>
   );
